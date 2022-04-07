@@ -1,8 +1,8 @@
 {
   "data": {
-    "versioncode": "2022032515",
-    "versionname": "1.5.8",
-    "content": "bugfixs",
+    "versioncode": "2022040420",
+    "versionname": "1.6.0",
+    "content": "version:1.6.0\n1. Add dark mode\n2. Story download optimization\n3. Other optimization",
     "url": "https://play.google.com/store/apps/details?id=instagram.insaver.igtv.repost",
     "id": "instagram.insaver.igtv.repost",
     "force_version": "0"
