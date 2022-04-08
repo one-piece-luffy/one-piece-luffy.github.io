@@ -2,21 +2,21 @@
   "data": [
     {
       "name": "insaver",
-      "versioncode": 2022040420,
+      "versioncode": "2022040420",
       "versionname": "1.6.0",
       "content": "version:1.6.0\n1. Add dark mode\n2. Story download optimization\n3. Other optimization",
       "url": "https://play.google.com/store/apps/details?id=instagram.insaver.igtv.repost",
       "id": "instagram.insaver.igtv.repost",
-      "force_version": 0
+      "force_version": "0"
     },
     {
       "name": "insget",
-      "versioncode": 2022040420,
+      "versioncode": "2022040420",
       "versionname": "1.0.0",
       "content": "bugfixs",
       "url": "https://play.google.com/store/apps/details?id=app1.test1.insdown",
       "id": "app1.test1.insdown",
-      "force_version": 0
+      "force_version": "0"
     }
   ]
 }
