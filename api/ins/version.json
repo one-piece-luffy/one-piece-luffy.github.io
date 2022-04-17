@@ -1,6 +1,6 @@
 {
   "data": {
-    "versioncode": "2022041519",
+    "versioncode": "0",
     "versionname": "1.6.2",
     "content": "version:1.6.2\n1. Fix video download failure in some cases\n2. Story download optimization\n3. Other optimization",
     "url": "https://play.google.com/store/apps/details?id=instagram.insaver.igtv.repost",
