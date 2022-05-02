@@ -11,12 +11,12 @@
     },
     {
       "name": "tiantian",
-      "versioncode": "2022040420",
+      "versioncode": "2022050121",
       "versionname": "1.0.0",
       "content": "bugfixs",
       "url": "https://play.google.com/store/apps/details?id=tiantian.movie.video.shipin.film",
       "id": "tiantian.movie.video.shipin.film",
-      "force_version": "0"
+      "force_version": "2022050120"
     }
   ]
 }
