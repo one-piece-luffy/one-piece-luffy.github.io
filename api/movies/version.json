@@ -2,10 +2,10 @@
   "data": [
     {
       "name": "juhaokan",
-      "versioncode": "2022031420",
+      "versioncode": "2022061822",
       "versionname": "1.6",
-      "content": "version:1.6\n1. Fix video download failure in some cases\n2. Story download optimization\n3. Other optimization",
-      "url": "https://play.google.com/store/apps/details?id=juhaokan.movie.video.shipin",
+      "content": "bugfixs",
+      "url": "https://play.google.com/store/apps/details?id=videodownloader.movie.video.player&id=juhaokan.movie.video.shipin",
       "id": "juhaokan.movie.video.shipin",
       "force_version": "0"
     },
