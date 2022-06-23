@@ -11,12 +11,12 @@
     },
     {
       "name": "insget",
-      "versioncode": "2022040420",
+      "versioncode": "2022062126",
       "versionname": "1.0.0",
-      "content": "bugfixs",
+      "content": "Other improvements",
       "url": "https://play.google.com/store/apps/details?id=instagram.insget.story.video.downloader",
       "id": "instagram.insget.story.video.downloader",
-      "force_version": "0"
+      "force_version": "2022062125"
     }
   ]
 }
