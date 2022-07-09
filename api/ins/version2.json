@@ -1,13 +1,12 @@
 {
   "data": [
     {
-      "name": "insaver",
-      "versioncode": "2022042420",
-      "versionname": "1.6.4",
-      "content": "version:1.6.4\n1.bugfixs",
+      "versioncode": "2022070820",
+      "versionname": "1.7.1",
+      "content": "version:1.7.1\n1.Other improvements",
       "url": "https://play.google.com/store/apps/details?id=instagram.insaver.igtv.repost",
       "id": "instagram.insaver.igtv.repost",
-      "force_version": "0"
+      "force_version": "2022042420"
     },
     {
       "name": "insget",
