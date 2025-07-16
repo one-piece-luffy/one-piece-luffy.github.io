@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>追剧TV - 追剧首选</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif';
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 min-h-screen flex items-center justify-center p-4">
+
+    <div class="text-center text-white">
+
+        <div class="flex justify-center mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="text-white drop-shadow-lg">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-black mb-4 drop-shadow-md">
+            轻松解析与保存
+        </h1>
+        <p class="text-xl md:text-2xl font-bold mb-12 drop-shadow-sm">
+            Instagram 精彩视频
+        </p>
+
+        <a href="#" id="downloadButton"
+            class="bg-white text-pink-500 font-bold py-4 px-12 rounded-full text-lg md:text-xl shadow-xl hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-white/50 transition-transform transform hover:scale-105 duration-300 ease-in-out">
+            立即下载
+        </a>
+
+        <div class="mt-16 text-white/70 text-sm">
+            <p>仅支持 Android</p>
+        </div>
+    </div>
+
+    <div id="messageBox"
+        class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 bg-gray-800 text-white py-2 px-4 rounded-lg shadow-lg">
+        开始下载 App 安装文件
+    </div>
+
+    <script>
+        const downloadButton = document.getElementById('downloadButton');
+        const messageBox = document.getElementById('messageBox');
+
+        downloadButton.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            const downloadLink = '#';
+
+            messageBox.classList.remove('hidden');
+
+            window.location.href = downloadLink;
+
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
+
+</body>
+
+</html>
