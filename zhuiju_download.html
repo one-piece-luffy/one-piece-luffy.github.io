@@ -1,76 +1,93 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>追剧TV - 追剧首选</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>追剧 TV - 畅享精彩剧集</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-
         body {
-            font-family: 'Inter', 'Helvetica Neue', 'Arial', 'sans-serif';
+            font-family: 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .header {
+            background-color: #F24A4D;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .feature img {
+            max-width: 400px;
+            margin-right: 2rem;
+            border-radius: 4px;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: #F33A3D;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: #ff5252;
+        }
+        .download-section {
+            text-align: center;
+            padding: 0rem 0;
+        }
+        .footer {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #333;
+            color: white;
         }
     </style>
 </head>
-
-<body
-    class="bg-gradient-to-br from-purple-600 via-pink-500 to-red-500 min-h-screen flex items-center justify-center p-4">
-
-    <div class="text-center text-white">
-
-        <div class="flex justify-center mb-8">
-            <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                class="text-white drop-shadow-lg">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-        </div>
-
-        <h1 class="text-4xl md:text-6xl font-black mb-4 drop-shadow-md">
-            电影、电视剧、动漫、综艺、影视 免费在线观看
-        </h1>
-        <p class="text-xl md:text-2xl font-bold mb-12 drop-shadow-sm">
-           追剧TV，众多热门新剧、经典老剧院线大片，华语剧、港台剧、韩剧、美剧、日剧、英剧、泰剧统统聚合搜罗，你想看的都在这里！ 
-        </p>
-
-        <a href="#" id="downloadButton"
-            class="bg-white text-pink-500 font-bold py-4 px-12 rounded-full text-lg md:text-xl shadow-xl hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-white/50 transition-transform transform hover:scale-105 duration-300 ease-in-out">
-            立即下载
-        </a>
-
-        <div class="mt-16 text-white/70 text-sm">
-            <p>仅支持 Android</p>
-        </div>
+<body>
+    <div class="header">
+        <h1>追剧 TV</h1>
+        <p>汇聚热门电视剧、电影、综艺、动漫，满足你的各种追剧需求。畅享海量精彩剧集，随时随地追不停！</p>
     </div>
-
-    <div id="messageBox"
-        class="hidden fixed bottom-5 left-1/2 -translate-x-1/2 bg-gray-800 text-white py-2 px-4 rounded-lg shadow-lg">
-        开始下载 App 安装文件
+    
+    <div class="container">
+        <div class="feature">
+            <!-- <img src="https://via.placeholder.com/400x250" alt="海量片源"> -->
+            <div>
+                <h2>所有视频免费看、在线看、可以下载</h2>
+                <p>众多热门新剧、经典老剧院线大片，陆剧、港剧、台剧、韩剧、美剧、日剧、英剧、泰剧统统聚合搜罗，你想看的都在这里。</p>
+            </div>
+        </div>
+             
+       
     </div>
-
-    <script>
-        const downloadButton = document.getElementById('downloadButton');
-        const messageBox = document.getElementById('messageBox');
-
-        downloadButton.addEventListener('click', (event) => {
-            event.preventDefault();
-
-            const downloadLink = '#';
-
-            messageBox.classList.remove('hidden');
-
-            window.location.href = downloadLink;
-
-            setTimeout(() => {
-                messageBox.classList.add('hidden');
-            }, 3000);
-        });
-    </script>
-
+    
+    <div class="download-section">
+        <h2>立即下载追剧 TV</h2>
+        <a href="zhuiju_tv.apk" class="download-btn">下载 APK</a>
+        <p>仅支持 Android 系统</p>
+    </div>
+    
+    <div class="footer">
+        <p>&copy; 2025 追剧 TV 版权所有</p>
+    </div>
 </body>
-
 </html>
