@@ -30,7 +30,7 @@
                 content-visibility: auto;
             }
             .text-shadow {
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
             .bg-gradient-custom {
                 background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
@@ -39,9 +39,15 @@
                 animation: float 6s ease-in-out infinite;
             }
             @keyframes float {
-                0% { transform: translateY(0px); }
-                50% { transform: translateY(-20px); }
-                100% { transform: translateY(0px); }
+                0% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-20px);
+                }
+                100% {
+                    transform: translateY(0px);
+                }
             }
             .scrollbar-hide::-webkit-scrollbar {
                 display: none;
@@ -92,8 +98,9 @@
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
             <a href="#download"
-               class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 flex items-center justify-center">
+               class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 flex items-center justify-center download-button">
                 <i class="fa fa-download mr-2"></i> 立即下载
+                <i class="fa fa-spinner fa-spin ml-2 hidden loading-icon"></i>
             </a>
             <a href="#features"
                class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full transition-all hover:bg-white/10 flex items-center justify-center">
@@ -265,12 +272,13 @@
             <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
 
                 <a href="zhuiju_tv.apk"
-                   class="bg-white text-primary font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 flex items-center justify-center">
+                   class="bg-white text-primary font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 flex items-center justify-center download-button">
                     <i class="fa fa-android text-3xl mr-3"></i>
                     <div class="text-left">
                         <div class="text-xs">下载</div>
                         <div class="text-lg">追剧TV</div>
                     </div>
+                    <i class="fa fa-spinner fa-spin ml-2 hidden loading-icon"></i>
                 </a>
 
             </div>
@@ -432,6 +440,19 @@
                     otherIcon.classList.remove('fa-minus');
                     otherIcon.classList.remove('rotate-45');
                 }
+            });
+        });
+    });
+
+    // 下载按钮点击事件
+    document.querySelectorAll('.download-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const loadingIcon = button.querySelector('.loading-icon');
+            loadingIcon.classList.remove('hidden');
+
+            // 页面加载完成后隐藏加载图标
+            window.addEventListener('load', () => {
+                loadingIcon.classList.add('hidden');
             });
         });
     });
