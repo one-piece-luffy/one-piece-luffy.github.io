@@ -61,402 +61,415 @@
 </head>
 
 <body class="bg-light text-dark font-sans">
-<!-- 导航栏 -->
-<nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center">
-            <i class="fa fa-play-circle text-primary text-3xl mr-2"></i>
-            <span class="text-xl font-bold text-white text-shadow">追剧TV</span>
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fa fa-play-circle text-primary text-3xl mr-2"></i>
+                <span class="text-xl font-bold text-white text-shadow">追剧TV</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-white hover:text-secondary transition-colors">功能</a>
+                <a href="#screenshots" class="text-white hover:text-secondary transition-colors">截图</a>
+                <a href="#reviews" class="text-white hover:text-secondary transition-colors">评价</a>
+                <a href="#download" class="text-white hover:text-secondary transition-colors">下载</a>
+            </div>
+            <button class="md:hidden text-white text-xl">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>
-        <div class="hidden md:flex space-x-8">
-            <a href="#features" class="text-white hover:text-secondary transition-colors">功能</a>
-            <a href="#screenshots" class="text-white hover:text-secondary transition-colors">截图</a>
-            <a href="#reviews" class="text-white hover:text-secondary transition-colors">评价</a>
-            <a href="#download" class="text-white hover:text-secondary transition-colors">下载</a>
-        </div>
-        <button class="md:hidden text-white text-xl">
-            <i class="fa fa-bars"></i>
-        </button>
-    </div>
-</nav>
+    </nav>
 
-<!-- 英雄区域 -->
-<header class="relative h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-gradient-to-r from-dark/90 to-dark/60 z-10"></div>
-        <img src="https://picsum.photos/id/1033/1920/1080" alt="影视背景" class="w-full h-full object-cover">
-    </div>
-    <div class="container mx-auto px-4 z-20 text-center">
-        <div class="animate-float">
-            <i class="fa fa-play-circle text-primary text-8xl mb-4"></i>
+    <!-- 英雄区域 -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-dark/90 to-dark/60 z-10"></div>
+            <img src="https://picsum.photos/id/1033/1920/1080" alt="影视背景" class="w-full h-full object-cover">
         </div>
-        <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white mb-6 leading-tight">
-            随时随地<br><span class="text-primary">追剧</span>无忧
-        </h1>
-        <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/80 max-w-2xl mx-auto mb-10">
-            追剧TV - 您的私人影视库，汇聚热门电视剧、电影、综艺、动漫，畅享海量精彩剧集，随时随地追不停！。
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#download"
-               class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 flex items-center justify-center download-button">
-                <i class="fa fa-download mr-2"></i> 立即下载
-                <i class="fa fa-spinner fa-spin ml-2 hidden loading-icon"></i>
-            </a>
-            <a href="#features"
-               class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full transition-all hover:bg-white/10 flex items-center justify-center">
-                <i class="fa fa-info-circle mr-2"></i> 了解更多
-            </a>
-        </div>
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#features" class="text-white/70 hover:text-white">
-                <i class="fa fa-angle-down text-3xl"></i>
-            </a>
-        </div>
-    </div>
-</header>
-
-<!-- 功能区域 -->
-<section id="features" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">强大功能，尽享追剧体验</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">追剧TV拥有一系列强大功能，满足您的各种追剧需求</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div
-                    class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
-                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa fa-film text-primary text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">海量资源</h3>
-                <p class="text-gray-600">众多热门新剧、经典老剧院线大片，陆剧、港剧、台剧、韩剧、美剧、日剧、英剧、泰剧统统聚合搜罗，你想看的都在这里</p>
+        <div class="container mx-auto px-4 z-20 text-center">
+            <div class="animate-float">
+                <i class="fa fa-play-circle text-primary text-8xl mb-4"></i>
             </div>
-            <div
-                    class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
-                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa fa-cloud-download text-primary text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">离线下载</h3>
-                <p class="text-gray-600">支持高清视频离线下载，没有网络也能随时随地观看您喜爱的剧集，旅行、通勤不再无聊。</p>
-            </div>
-            <div
-                    class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
-                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                    <i class="fa fa-bolt text-primary text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">极速播放</h3>
-                <p class="text-gray-600">采用先进的视频编码技术和智能缓存算法，播放流畅不卡顿，让您享受极致的观看体验。</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- 截图展示 -->
-<section id="screenshots" class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">精美界面，极致体验</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">追剧TV拥有简洁美观的界面设计，让您的观影体验更加舒适</p>
-        </div>
-        <div class="relative">
-            <div class="overflow-x-auto scrollbar-hide pb-8">
-                <div class="flex space-x-6 w-max">
-                    <div
-                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
-                        <img src="img/1.jpg" alt="追剧TV主界面" class="w-full h-auto">
-                    </div>
-                    <div
-                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
-                        <img src="img/2.jpg" alt="影视分类页面" class="w-full h-auto">
-                    </div>
-                    <div
-                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
-                        <img src="img/3.jpg" alt="播放详情页" class="w-full h-auto">
-                    </div>
-                    <div
-                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
-                        <img src="img/4.jpg" alt="下载管理界面" class="w-full h-auto">
-                    </div>
-                    <div
-                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
-                        <img src="img/5.jpg" alt="个人中心界面" class="w-full h-auto">
-                    </div>
-                </div>
-            </div>
-            <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 hidden md:block">
-                <button
-                        class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                    <i class="fa fa-angle-left text-xl"></i>
-                </button>
-            </div>
-            <div class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 hidden md:block">
-                <button
-                        class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
-                    <i class="fa fa-angle-right text-xl"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 用户评价 -->
-<section id="reviews" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">用户的真实评价</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">看看其他用户对追剧TV的评价如何</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                <div class="flex items-center mb-4">
-                    <img src="https://picsum.photos/id/1027/100/100" alt="用户头像"
-                         class="w-12 h-12 rounded-full object-cover">
-                    <div class="ml-4">
-                        <h4 class="font-bold">张小明</h4>
-                        <div class="flex text-yellow-400">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-gray-600">"追剧TV真的是我用过最好的追剧应用了，资源丰富，更新及时，看剧体验非常好！"</p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                <div class="flex items-center mb-4">
-                    <img src="https://picsum.photos/id/1012/100/100" alt="用户头像"
-                         class="w-12 h-12 rounded-full object-cover">
-                    <div class="ml-4">
-                        <h4 class="font-bold">李华</h4>
-                        <div class="flex text-yellow-400">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-half-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-gray-600">"离线下载功能非常实用，我经常在地铁上看下载好的剧集。界面也很简洁，操作简单，推荐给所有喜欢追剧的朋友！"</p>
-            </div>
-            <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                <div class="flex items-center mb-4">
-                    <img src="https://picsum.photos/id/1025/100/100" alt="用户头像"
-                         class="w-12 h-12 rounded-full object-cover">
-                    <div class="ml-4">
-                        <h4 class="font-bold">王小花</h4>
-                        <div class="flex text-yellow-400">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star-o"></i>
-                        </div>
-                    </div>
-                </div>
-                <p class="text-gray-600">"资源真的很丰富，国内外热门剧集都能找到，更新也很快。唯一的小缺点是有的线路偶尔播放会卡顿，希望后续能优化一下。"</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 下载区域 -->
-<section id="download" class="py-20 bg-gradient-custom text-white">
-    <div class="container mx-auto px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">立即下载追剧TV</h2>
-            <p class="text-white/80 mb-10">随时随地享受精彩影视内容，仅支持Android设备</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-
-                <a href="zhuiju_tv.apk"
-                   class="bg-white text-primary font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 flex items-center justify-center download-button">
-                    <i class="fa fa-android text-3xl mr-3"></i>
-                    <div class="text-left">
-                        <div class="text-xs">下载</div>
-                        <div class="text-lg">追剧TV</div>
-                    </div>
-                    <i class="fa fa-spinner fa-spin ml-2 hidden loading-icon"></i>
+            <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-bold text-white mb-6 leading-tight">
+                随时随地<br><span class="text-primary">追剧</span>无忧
+            </h1>
+            <p class="text-[clamp(1rem,2vw,1.25rem)] text-white/80 max-w-2xl mx-auto mb-10">
+                追剧TV - 您的私人影视库，汇聚热门电视剧、电影、综艺、动漫，畅享海量精彩剧集，随时随地追不停！。
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#download"
+                    class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-all transform hover:scale-105 flex items-center justify-center">
+                    <i class="fa fa-download mr-2"></i> 立即下载
                 </a>
+                <a href="#features"
+                    class="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full transition-all hover:bg-white/10 flex items-center justify-center">
+                    <i class="fa fa-info-circle mr-2"></i> 了解更多
+                </a>
+            </div>
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#features" class="text-white/70 hover:text-white">
+                    <i class="fa fa-angle-down text-3xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 功能区域 -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">强大功能，尽享追剧体验</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">追剧TV拥有一系列强大功能，满足您的各种追剧需求</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-film text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">海量资源</h3>
+                    <p class="text-gray-600">众多热门新剧、经典老剧院线大片，陆剧、港剧、台剧、韩剧、美剧、日剧、英剧、泰剧统统聚合搜罗，你想看的都在这里</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-cloud-download text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">离线下载</h3>
+                    <p class="text-gray-600">支持高清视频离线下载，没有网络也能随时随地观看您喜爱的剧集，旅行、通勤不再无聊。</p>
+                </div>
+                <div
+                    class="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-2">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-bolt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">极速播放</h3>
+                    <p class="text-gray-600">采用先进的视频编码技术和智能缓存算法，播放流畅不卡顿，让您享受极致的观看体验。</p>
+                </div>
 
             </div>
-
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- FAQ区域 -->
-<section class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">常见问题</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">解答您可能遇到的问题</p>
-        </div>
-        <div class="max-w-3xl mx-auto">
-            <div class="space-y-4">
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button
-                            class="faq-toggle w-full flex justify-between items-center p-6 text-left font-bold bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span>追剧TV需要付费吗？</span>
-                        <i class="fa fa-plus text-primary transition-transform"></i>
-                    </button>
-                    <div class="faq-content hidden p-6 border-t border-gray-200 bg-white">
-                        <p class="text-gray-600">追剧TV的功能是免费的，您可以免费观看所有影视内容。</p>
+    <!-- 截图展示 -->
+    <section id="screenshots" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">精美界面，极致体验</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">追剧TV拥有简洁美观的界面设计，让您的观影体验更加舒适</p>
+            </div>
+            <div class="relative">
+                <div class="overflow-x-auto scrollbar-hide pb-8">
+                    <div class="flex space-x-6 w-max">
+                        <div
+                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
+                            <img src="img/1.jpg" alt="追剧TV主界面" class="w-full h-auto">
+                        </div>
+                        <div
+                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
+                            <img src="img/2.jpg" alt="影视分类页面" class="w-full h-auto">
+                        </div>
+                        <div
+                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
+                            <img src="img/3.jpg" alt="播放详情页" class="w-full h-auto">
+                        </div>
+                        <div
+                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
+                            <img src="img/4.jpg" alt="下载管理界面" class="w-full h-auto">
+                        </div>
+                        <div
+                            class="w-72 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-all">
+                            <img src="img/5.jpg" alt="个人中心界面" class="w-full h-auto">
+                        </div>
                     </div>
                 </div>
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
+                <div class="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-1/2 hidden md:block">
                     <button
-                            class="faq-toggle w-full flex justify-between items-center p-6 text-left font-bold bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span>如何更新追剧TV？</span>
-                        <i class="fa fa-plus text-primary transition-transform"></i>
+                        class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                        <i class="fa fa-angle-left text-xl"></i>
                     </button>
-                    <div class="faq-content hidden p-6 border-t border-gray-200 bg-white">
-                        <p class="text-gray-600">
-                            如果您是通过应用商店下载的追剧TV，应用会自动提示您更新。如果您是通过官网下载的APK文件，需要手动下载最新版本进行安装。
-                        </p>
+                </div>
+                <div class="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/2 hidden md:block">
+                    <button
+                        class="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+                        <i class="fa fa-angle-right text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">用户的真实评价</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">看看其他用户对追剧TV的评价如何</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/id/1027/100/100" alt="用户头像"
+                            class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">张小明</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"追剧TV真的是我用过最好的追剧应用了，资源丰富，更新及时，看剧体验非常好！"</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/id/1012/100/100" alt="用户头像"
+                            class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">李华</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"离线下载功能非常实用，我经常在地铁上看下载好的剧集。界面也很简洁，操作简单，推荐给所有喜欢追剧的朋友！"</p>
+                </div>
+                <div class="bg-gray-50 p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/id/1025/100/100" alt="用户头像"
+                            class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold">王小花</h4>
+                            <div class="flex text-yellow-400">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600">"资源真的很丰富，国内外热门剧集都能找到，更新也很快。唯一的小缺点是有的线路偶尔播放会卡顿，希望后续能优化一下。"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载区域 -->
+    <section id="download" class="py-20 bg-gradient-custom text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">立即下载追剧TV</h2>
+                <p class="text-white/80 mb-10">随时随地享受精彩影视内容，仅支持Android设备</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                    <a href="#" id="downloadButton"
+                        class="bg-white text-primary font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 flex items-center justify-center">
+                        <i class="fa fa-android text-3xl mr-3"></i>
+                        <div class="text-left">
+                            <div class="text-xs">下载</div>
+                            <div class="text-lg">追剧TV</div>
+                        </div>
+                    </a>
+                    <!-- 添加loading元素 -->
+                    <div id="loading" class="hidden">
+                        <i class="fa fa-spinner fa-spin text-3xl"></i>
                     </div>
                 </div>
-                <div class="border border-gray-200 rounded-xl overflow-hidden">
-                    <button
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ区域 -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold mb-4">常见问题</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">解答您可能遇到的问题</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button
                             class="faq-toggle w-full flex justify-between items-center p-6 text-left font-bold bg-gray-50 hover:bg-gray-100 transition-colors">
-                        <span>为什么有些影视无法播放？</span>
-                        <i class="fa fa-plus text-primary transition-transform"></i>
-                    </button>
-                    <div class="faq-content hidden p-6 border-t border-gray-200 bg-white">
-                        <p class="text-gray-600">
-                            影视无法播放可能有多种原因，例如网络连接不稳定、视频源失效、应用版本过旧等。您可以尝试以下操作：检查网络连接、切换线路、更新应用到最新版本。如果问题仍然存在，请联系我们的客服人员。
-                        </p>
+                            <span>追剧TV需要付费吗？</span>
+                            <i class="fa fa-plus text-primary transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden p-6 border-t border-gray-200 bg-white">
+                            <p class="text-gray-600">追剧TV的功能是免费的，您可以免费观看所有影视内容。</p>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button
+                            class="faq-toggle w-full flex justify-between items-center p-6 text-left font-bold bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>如何更新追剧TV？</span>
+                            <i class="fa fa-plus text-primary transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden p-6 border-t border-gray-200 bg-white">
+                            <p class="text-gray-600">
+                                如果您是通过应用商店下载的追剧TV，应用会自动提示您更新。如果您是通过官网下载的APK文件，需要手动下载最新版本进行安装。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="border border-gray-200 rounded-xl overflow-hidden">
+                        <button
+                            class="faq-toggle w-full flex justify-between items-center p-6 text-left font-bold bg-gray-50 hover:bg-gray-100 transition-colors">
+                            <span>为什么有些影视无法播放？</span>
+                            <i class="fa fa-plus text-primary transition-transform"></i>
+                        </button>
+                        <div class="faq-content hidden p-6 border-t border-gray-200 bg-white">
+                            <p class="text-gray-600">
+                                影视无法播放可能有多种原因，例如网络连接不稳定、视频源失效、应用版本过旧等。您可以尝试以下操作：检查网络连接、切换线路、更新应用到最新版本。如果问题仍然存在，请联系我们的客服人员。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <i class="fa fa-play-circle text-primary text-3xl mr-2"></i>
+                        <span class="text-xl font-bold">追剧TV</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">您的私人影视库，随时随地追剧无忧</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa fa-weibo text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa fa-wechat text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa fa-instagram text-xl"></i>
+                        </a>
                     </div>
                 </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 页脚 -->
-<footer class="bg-dark text-white pt-16 pb-8">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <div>
-                <div class="flex items-center mb-6">
-                    <i class="fa fa-play-circle text-primary text-3xl mr-2"></i>
-                    <span class="text-xl font-bold">追剧TV</span>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#features" class="text-gray-400 hover:text-primary transition-colors">功能介绍</a></li>
+                        <li><a href="#screenshots" class="text-gray-400 hover:text-primary transition-colors">应用截图</a></li>
+                        <li><a href="#reviews" class="text-gray-400 hover:text-primary transition-colors">用户评价</a></li>
+                        <li><a href="#download" class="text-gray-400 hover:text-primary transition-colors">下载中心</a></li>
+                    </ul>
                 </div>
-                <p class="text-gray-400 mb-6">您的私人影视库，随时随地追剧无忧</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                        <i class="fa fa-weibo text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                        <i class="fa fa-wechat text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                        <i class="fa fa-twitter text-xl"></i>
-                    </a>
-                    <a href="#" class="text-gray-400 hover:text-primary transition-colors">
-                        <i class="fa fa-instagram text-xl"></i>
-                    </a>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">支持与帮助</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">常见问题</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">使用教程</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">联系我们</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">隐私政策</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-6">快速链接</h4>
-                <ul class="space-y-3">
-                    <li><a href="#features" class="text-gray-400 hover:text-primary transition-colors">功能介绍</a></li>
-                    <li><a href="#screenshots" class="text-gray-400 hover:text-primary transition-colors">应用截图</a></li>
-                    <li><a href="#reviews" class="text-gray-400 hover:text-primary transition-colors">用户评价</a></li>
-                    <li><a href="#download" class="text-gray-400 hover:text-primary transition-colors">下载中心</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-lg font-bold mb-6">支持与帮助</h4>
-                <ul class="space-y-3">
-                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">常见问题</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">使用教程</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">联系我们</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">隐私政策</a></li>
-                </ul>
-            </div>
 
+            </div>
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-gray-500 text-center">© 2025 追剧TV. 保留所有权利。</p>
+            </div>
         </div>
-        <div class="border-t border-gray-800 pt-8">
-            <p class="text-gray-500 text-center">© 2025 追剧TV. 保留所有权利。</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-<script>
-    // 导航栏滚动效果
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-dark', 'shadow-lg');
-            navbar.classList.remove('bg-transparent');
-        } else {
-            navbar.classList.remove('bg-dark', 'shadow-lg');
-            navbar.classList.add('bg-transparent');
-        }
-    });
-
-    // 平滑滚动
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-dark', 'shadow-lg');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-dark', 'shadow-lg');
+                navbar.classList.add('bg-transparent');
             }
         });
-    });
 
-    // FAQ 切换
-    document.querySelectorAll('.faq-toggle').forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const content = toggle.nextElementSibling;
-            const icon = toggle.querySelector('i');
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
 
-            // 切换当前FAQ的显示状态
-            content.classList.toggle('hidden');
-            icon.classList.toggle('fa-plus');
-            icon.classList.toggle('fa-minus');
-            icon.classList.toggle('rotate-45');
-
-            // 关闭其他所有FAQ
-            document.querySelectorAll('.faq-toggle').forEach(otherToggle => {
-                if (otherToggle !== toggle) {
-                    const otherContent = otherToggle.nextElementSibling;
-                    const otherIcon = otherToggle.querySelector('i');
-
-                    otherContent.classList.add('hidden');
-                    otherIcon.classList.add('fa-plus');
-                    otherIcon.classList.remove('fa-minus');
-                    otherIcon.classList.remove('rotate-45');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
-    });
 
-    // 下载按钮点击事件
-    document.querySelectorAll('.download-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const loadingIcon = button.querySelector('.loading-icon');
-            loadingIcon.classList.remove('hidden');
+        // FAQ 切换
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
 
-            // 页面加载完成后隐藏加载图标
-            window.addEventListener('load', () => {
-                loadingIcon.classList.add('hidden');
+                // 切换当前FAQ的显示状态
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+                icon.classList.toggle('rotate-45');
+
+                // 关闭其他所有FAQ
+                document.querySelectorAll('.faq-toggle').forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        const otherContent = otherToggle.nextElementSibling;
+                        const otherIcon = otherToggle.querySelector('i');
+
+                        otherContent.classList.add('hidden');
+                        otherIcon.classList.add('fa-plus');
+                        otherIcon.classList.remove('fa-minus');
+                        otherIcon.classList.remove('rotate-45');
+                    }
+                });
             });
         });
-    });
-</script>
+
+        // 下载按钮点击事件
+        const downloadButton = document.getElementById('downloadButton');
+        const loading = document.getElementById('loading');
+
+        downloadButton.addEventListener('click', async () => {
+            // 显示loading
+            loading.classList.remove('hidden');
+            try {
+                const response = await fetch('zhuiju_tv.apk');
+                if (response.ok) {
+                    // 创建一个链接元素
+                    const link = document.createElement('a');
+                    link.href = await response.blob().then(blob => URL.createObjectURL(blob));
+                    link.download = 'zhuiju_tv.apk';
+                    // 模拟点击链接
+                    link.click();
+                    // 释放URL对象
+                    URL.revokeObjectURL(link.href);
+                }
+            } catch (error) {
+                console.error('下载失败:', error);
+            } finally {
+                // 隐藏loading
+                loading.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 
 </html>
