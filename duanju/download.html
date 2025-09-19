@@ -205,29 +205,31 @@
     </section>
 
     <!-- 下载区域 -->
-    <section id="download" class="py-20 bg-gradient text-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-2xl mx-auto">
-                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-6">立即下载<br>短剧大全APP</h2>
-                <p class="text-white/90 mb-8">
-                    支持安卓系统，点击下方按钮即可下载，开启你的短剧观看之旅。
-                </p>
-                <div class="flex justify-center">
-                    <a href="app-short.apk" class="bg-white text-primary px-8 py-4 rounded-xl font-medium flex items-center hover:bg-gray-100 transition-colors text-lg">
-                        <i class="fa fa-android text-2xl mr-3"></i>
-                        <div>
-                            <div class="text-xs">下载</div>
-                            <div>Android 版</div>
-                        </div>
-                    </a>
-                        <!-- 加载指示器 (默认隐藏) -->
-                    <div class="loading-indicator hidden ml-4 text-white">
-                        <i class="fa fa-circle-o-notch fa-spin text-xl"></i>
+<section id="download" class="py-20 bg-gradient text-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto">
+            <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold mb-6">立即下载<br>短剧大全APP</h2>
+            <p class="text-white/90 mb-8">
+                支持安卓系统，点击下方按钮即可下载，开启你的短剧观看之旅。
+            </p>
+            <div class="flex justify-center items-center">
+                <a href="app-short.apk" class="bg-white text-primary px-8 py-4 rounded-xl font-medium flex items-center hover:bg-gray-100 transition-colors text-lg download-btn">
+                    <i class="fa fa-android text-2xl mr-3"></i>
+                    <div>
+                        <div class="text-xs">下载</div>
+                        <div>Android 版</div>
                     </div>
+                </a>
+                <!-- 加载指示器 (默认隐藏) -->
+                <div class="loading-indicator ml-4 hidden">
+                    <i class="fa fa-circle-o-notch fa-spin text-2xl"></i>
                 </div>
             </div>
+            <!-- 隐藏的iframe用于监听下载链接加载状态 -->
+            <iframe id="downloadFrame" style="display: none;"></iframe>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- 用户评价 -->
     <section id="reviews" class="py-16 bg-white">
@@ -410,31 +412,41 @@
                 });
             });
         });
-
-        // 移动端菜单切换功能（如果需要）
-        document.getElementById('menuToggle').addEventListener('click', function() {
-            // 这里可以添加菜单显示/隐藏的逻辑
-            alert('菜单按钮被点击'); // 示例代码，实际项目中替换为真实逻辑
-        });
-        // 下载按钮加载效果
+// 下载按钮加载效果
 document.addEventListener('DOMContentLoaded', function() {
     const downloadBtn = document.querySelector('.download-btn');
     const loadingIndicator = document.querySelector('.loading-indicator');
     
     if (downloadBtn && loadingIndicator) {
         downloadBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const downloadUrl = this.getAttribute('href');
+            
             // 显示loading效果
             loadingIndicator.classList.remove('hidden');
-            loadingIndicator.classList.add('inline-block');
+            // 禁用按钮防止重复点击
+            downloadBtn.classList.add('opacity-70', 'cursor-not-allowed');
             
-            // 防止过快跳转导致loading效果看不到
-            e.preventDefault();
-            const href = this.getAttribute('href');
+            // 创建XMLHttpRequest对象来检测文件是否准备好
+            const xhr = new XMLHttpRequest();
+            xhr.open('HEAD', downloadUrl, true);
             
-            // 延迟一小段时间再跳转，确保用户能看到loading效果
-            setTimeout(() => {
-                window.location.href = href;
-            }, 500);
+            xhr.onreadystatechange = function() {
+                // 当请求完成或接收到足够的响应头时
+                if (xhr.readyState === 4 || (xhr.readyState > 1 && xhr.status === 200)) {
+                    // 触发下载
+                    window.location.href = downloadUrl;
+                    
+                    // 隐藏loading效果
+                    loadingIndicator.classList.add('hidden');
+                    downloadBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+                }
+            };
+            
+          
+          
+            
+            xhr.send();
         });
     }
 });
