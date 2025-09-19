@@ -203,8 +203,7 @@
             </div>
         </div>
     </section>
-
-    <!-- 下载区域 -->
+<!-- 修改下载区域代码 -->
 <section id="download" class="py-20 bg-gradient text-white">
     <div class="container mx-auto px-4">
         <div class="text-center max-w-2xl mx-auto">
@@ -213,24 +212,22 @@
                 支持安卓系统，点击下方按钮即可下载，开启你的短剧观看之旅。
             </p>
             <div class="flex justify-center items-center">
-                <a href="app-short.apk" class="bg-white text-primary px-8 py-4 rounded-xl font-medium flex items-center hover:bg-gray-100 transition-colors text-lg download-btn">
-                    <i class="fa fa-android text-2xl mr-3"></i>
-                    <div>
-                        <div class="text-xs">下载</div>
-                        <div>Android 版</div>
+                    <a href="#" id="downloadButton"
+                        class="bg-white text-primary font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 flex items-center justify-center">
+                        <i class="fa fa-android text-3xl mr-3"></i>
+                        <div class="text-left">
+                            <div class="text-xs">下载</div>
+                            <div class="text-lg">追剧TV-1.0.2</div>
+                        </div>
+                    </a>
+                    <!-- 添加loading元素 -->
+                    <div id="loading" class="hidden">
+                        <i class="fa fa-spinner fa-spin text-3xl"></i>
                     </div>
-                </a>
-                <!-- 加载指示器 (默认隐藏) -->
-                <div class="loading-indicator ml-4 hidden">
-                    <i class="fa fa-circle-o-notch fa-spin text-2xl"></i>
-                </div>
             </div>
-            <!-- 隐藏的iframe用于监听下载链接加载状态 -->
-            <iframe id="downloadFrame" style="display: none;"></iframe>
         </div>
     </div>
 </section>
-
     <!-- 用户评价 -->
     <section id="reviews" class="py-16 bg-white">
         <div class="container mx-auto px-4">
@@ -391,65 +388,87 @@
     </footer>
 
     <script>
-        // 导航栏滚动效果
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('py-2', 'shadow');
-                nav.classList.remove('py-3');
-            } else {
-                nav.classList.add('py-3');
-                nav.classList.remove('py-2', 'shadow');
-            }
-        });
-
-        // 平滑滚动
+             // 导航栏滚动效果
+        // const navbar = document.getElementById('navbar');
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 50) {
+        //         navbar.classList.add('bg-dark', 'shadow-lg');
+        //         navbar.classList.remove('bg-transparent');
+        //     } else {
+        //         navbar.classList.remove('bg-dark', 'shadow-lg');
+        //         navbar.classList.add('bg-transparent');
+        //     }
+        // });
+    // 平滑滚动
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // FAQ 切换
+        document.querySelectorAll('.faq-toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+
+                // 切换当前FAQ的显示状态
+                content.classList.toggle('hidden');
+                icon.classList.toggle('fa-plus');
+                icon.classList.toggle('fa-minus');
+                icon.classList.toggle('rotate-45');
+
+                // 关闭其他所有FAQ
+                document.querySelectorAll('.faq-toggle').forEach(otherToggle => {
+                    if (otherToggle !== toggle) {
+                        const otherContent = otherToggle.nextElementSibling;
+                        const otherIcon = otherToggle.querySelector('i');
+
+                        otherContent.classList.add('hidden');
+                        otherIcon.classList.add('fa-plus');
+                        otherIcon.classList.remove('fa-minus');
+                        otherIcon.classList.remove('rotate-45');
+                    }
                 });
             });
         });
-// 下载按钮加载效果
-document.addEventListener('DOMContentLoaded', function() {
-    const downloadBtn = document.querySelector('.download-btn');
-    const loadingIndicator = document.querySelector('.loading-indicator');
-    
-    if (downloadBtn && loadingIndicator) {
-        downloadBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const downloadUrl = this.getAttribute('href');
-            
-            // 显示loading效果
-            loadingIndicator.classList.remove('hidden');
-            // 禁用按钮防止重复点击
-            downloadBtn.classList.add('opacity-70', 'cursor-not-allowed');
-            
-            // 创建XMLHttpRequest对象来检测文件是否准备好
-            const xhr = new XMLHttpRequest();
-            xhr.open('HEAD', downloadUrl, true);
-            
-            xhr.onreadystatechange = function() {
-                // 当请求完成或接收到足够的响应头时
-                if (xhr.readyState === 4 || (xhr.readyState > 1 && xhr.status === 200)) {
-                    // 触发下载
-                    window.location.href = downloadUrl;
-                    
-                    // 隐藏loading效果
-                    loadingIndicator.classList.add('hidden');
-                    downloadBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+
+        // 下载按钮点击事件
+        const downloadButton = document.getElementById('downloadButton');
+        const loading = document.getElementById('loading');
+
+        downloadButton.addEventListener('click', async () => {
+            // 显示loading
+            loading.classList.remove('hidden');
+            try {
+                const response = await fetch('app-short.apk');
+                if (response.ok) {
+                    // 创建一个链接元素
+                    const link = document.createElement('a');
+                    link.href = await response.blob().then(blob => URL.createObjectURL(blob));
+                    link.download = 'app-short.apk';
+                    // 模拟点击链接
+                    link.click();
+                    // 释放URL对象
+                    URL.revokeObjectURL(link.href);
                 }
-            };
-            
-          
-          
-            
-            xhr.send();
+            } catch (error) {
+                console.error('下载失败:', error);
+            } finally {
+                // 隐藏loading
+                loading.classList.add('hidden');
+            }
         });
-    }
-});
     </script>
 </body>
 </html>
