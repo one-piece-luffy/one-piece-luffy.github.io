@@ -220,6 +220,10 @@
                             <div>Android 版</div>
                         </div>
                     </a>
+                        <!-- 加载指示器 (默认隐藏) -->
+                    <div class="loading-indicator hidden ml-4 text-white">
+                        <i class="fa fa-circle-o-notch fa-spin text-xl"></i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -412,6 +416,28 @@
             // 这里可以添加菜单显示/隐藏的逻辑
             alert('菜单按钮被点击'); // 示例代码，实际项目中替换为真实逻辑
         });
+        // 下载按钮加载效果
+document.addEventListener('DOMContentLoaded', function() {
+    const downloadBtn = document.querySelector('.download-btn');
+    const loadingIndicator = document.querySelector('.loading-indicator');
+    
+    if (downloadBtn && loadingIndicator) {
+        downloadBtn.addEventListener('click', function(e) {
+            // 显示loading效果
+            loadingIndicator.classList.remove('hidden');
+            loadingIndicator.classList.add('inline-block');
+            
+            // 防止过快跳转导致loading效果看不到
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            
+            // 延迟一小段时间再跳转，确保用户能看到loading效果
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500);
+        });
+    }
+});
     </script>
 </body>
 </html>
