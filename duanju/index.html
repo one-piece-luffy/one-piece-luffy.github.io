@@ -55,9 +55,10 @@
                 <a href="#download" class="hover:text-primary transition-colors">立即下载</a>
                 <a href="#reviews" class="hover:text-primary transition-colors">用户评价</a>
             </div>
-            <button class="md:hidden text-secondary text-xl">
+            <!-- 移动端菜单按钮由button改为a标签 -->
+            <a href="javascript:void(0);" class="md:hidden text-secondary text-xl" id="menuToggle">
                 <i class="fa fa-bars"></i>
-            </button>
+            </a>
         </div>
     </nav>
 
@@ -139,8 +140,6 @@
                     <h3 class="text-xl font-bold mb-3">高清画质</h3>
                     <p class="text-gray-600">全平台高清画质，支持多种清晰度选择，根据网络状况自动调整，带来最佳观看体验。</p>
                 </div>
-
-               
             </div>
         </div>
     </section>
@@ -214,19 +213,14 @@
                     支持安卓系统，点击下方按钮即可下载，开启你的短剧观看之旅。
                 </p>
                 <div class="flex justify-center">
-                    <a href="#" id="downloadButton" class="bg-white text-primary px-8 py-4 rounded-xl font-medium flex items-center hover:bg-gray-100 transition-colors text-lg">
+                    <a href="app-short.apk" class="bg-white text-primary px-8 py-4 rounded-xl font-medium flex items-center hover:bg-gray-100 transition-colors text-lg">
                         <i class="fa fa-android text-2xl mr-3"></i>
                         <div>
                             <div class="text-xs">下载</div>
                             <div>Android 版</div>
                         </div>
                     </a>
-                      <!-- 添加loading元素 -->
-                    <div id="loading" class="hidden">
-                        <i class="fa fa-spinner fa-spin text-3xl"></i>
-                    </div>
                 </div>
-               
             </div>
         </div>
     </section>
@@ -340,8 +334,6 @@
                     </p>
                 </div>
 
-              
-
                 <!-- 问题 4 -->
                 <div class="bg-white p-6 rounded-xl shadow-sm">
                     <h3 class="font-bold text-lg mb-2 flex items-center">
@@ -368,7 +360,6 @@
                     <p class="text-gray-400 mb-6">
                         汇聚全网优质短剧，打造最佳观看体验，让精彩触手可及。
                     </p>
-                   
                 </div>
 
                 <div>
@@ -389,11 +380,7 @@
                         <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">联系我们</a></li>
                     </ul>
                 </div>
-
-               
             </div>
-
-           
         </div>
     </footer>
 
@@ -419,31 +406,11 @@
                 });
             });
         });
-         // 下载按钮点击事件
-        const downloadButton = document.getElementById('downloadButton');
-        const loading = document.getElementById('loading');
 
-        downloadButton.addEventListener('click', async () => {
-            // 显示loading
-            loading.classList.remove('hidden');
-            try {
-                const response = await fetch('zhuiju_tv.apk');
-                if (response.ok) {
-                    // 创建一个链接元素
-                    const link = document.createElement('a');
-                    link.href = await response.blob().then(blob => URL.createObjectURL(blob));
-                    link.download = 'app-short.apk';
-                    // 模拟点击链接
-                    link.click();
-                    // 释放URL对象
-                    URL.revokeObjectURL(link.href);
-                }
-            } catch (error) {
-                console.error('下载失败:', error);
-            } finally {
-                // 隐藏loading
-                loading.classList.add('hidden');
-            }
+        // 移动端菜单切换功能（如果需要）
+        document.getElementById('menuToggle').addEventListener('click', function() {
+            // 这里可以添加菜单显示/隐藏的逻辑
+            alert('菜单按钮被点击'); // 示例代码，实际项目中替换为真实逻辑
         });
     </script>
 </body>
